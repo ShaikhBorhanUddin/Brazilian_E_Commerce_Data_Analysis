@@ -81,7 +81,8 @@ The project consists of 10 main tables:
 
 - PostgreSQL
 - SQL
-- Kaggle Dataset
+- Kaggle
+- Microsoft Excel
 - Tableau
 
 ## License
