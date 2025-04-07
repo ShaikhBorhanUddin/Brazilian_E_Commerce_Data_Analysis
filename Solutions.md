@@ -124,3 +124,22 @@ LIMIT 10;
 |1025f0e2d44d7041d6cf58b6550e0bfa  |172860.69    |
 |7a67c85e85bb2ce8582c35f2203ad736  |162648.38    |
 |955fee9216a65b617aa5c0531780ce60  |160602.68    |
+# Q5: Display most preferred payment methods
+## Solution
+```SQL
+SELECT 
+    payment_type,
+    COUNT(*) AS total_transactions,
+    SUM(payment_value) AS total_value
+FROM order_payments
+GROUP BY payment_type
+ORDER BY total_value DESC;
+```
+## Output
+|payment_type|total_transactions|total_value|
+|------------|------------------|-----------|
+|credit_card |76795             |12542084.19|
+|boleto      |19784             |2869361.27 |
+|voucher     |5775              |379436.87  |
+|debit_card  |1529              |217989.79  |
+|not_defined |3                 |0.00       |
