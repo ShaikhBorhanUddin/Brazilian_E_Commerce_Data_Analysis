@@ -276,3 +276,29 @@ ORDER BY month;
 |2018-07-01 00:00:00|1261          |
 |2018-08-01 00:00:00|1278          |
 |2018-09-01 00:00:00|1             |
+# Q10: Identify top customers who spent the most
+## Solution
+```SQL
+SELECT 
+    c.customer_unique_id,
+    ROUND(SUM(oi.price + oi.freight_value), 2) AS total_spent
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+GROUP BY c.customer_unique_id
+ORDER BY total_spent DESC
+LIMIT 10;
+```
+## Output
+|customer_unique_id                |total_spent|
+|----------------------------------|-----------|
+|0a0a92112bd4c708ca5fde585afaa872  |13664.08   |
+|da122df9eeddfedc1dc1f5349a1a690c  |7571.63    |
+|763c8b1c9c68a0229c42c9fc6f662b93  |7274.88    |
+|dc4802a71eae9be1dd28f5d788ceb526  |6929.31    |
+|459bef486812aa25204be022145caa62  |6922.21    |
+|ff4159b92c40ebe40454e3e6a7c35ed6  |6726.66    |
+|4007669dec559734d6f53e029e360987  |6081.54    |
+|5d0a2980b292d049061542014e8960bf  |4809.44    |
+|eebb5dda148d3893cdaf5b5ca3040ccb  |4764.34    |
+|48e1ac109decbb87765a3eade6854098  |4681.78    |
