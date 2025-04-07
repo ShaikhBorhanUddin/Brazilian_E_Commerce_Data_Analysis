@@ -143,3 +143,20 @@ ORDER BY total_value DESC;
 |voucher     |5775              |379436.87  |
 |debit_card  |1529              |217989.79  |
 |not_defined |3                 |0.00       |
+# Q6: Show customer repeat purchase rate
+## Solution
+```SQL
+SELECT
+    COUNT(DISTINCT customer_id) AS total_customers,
+    COUNT(DISTINCT CASE WHEN customer_order_count > 1 THEN customer_id END) AS repeat_customers,
+    ROUND(100.0 * COUNT(DISTINCT CASE WHEN customer_order_count > 1 THEN customer_id END) / COUNT(DISTINCT customer_id), 2) AS repeat_purchase_rate_percentage
+FROM (
+    SELECT customer_id, COUNT(order_id) AS customer_order_count
+    FROM orders
+    GROUP BY customer_id
+) subquery;
+```
+## Output
+|total_customers|repeat_customers|repeat_purchase_rate_percentage|
+|---------------|----------------|-------------------------------|
+|99441          |0               |0.00                           |
