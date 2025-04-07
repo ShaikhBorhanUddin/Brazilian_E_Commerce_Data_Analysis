@@ -26,17 +26,21 @@ The goal is to build a relational database and run analytical queries to extract
 3. **Data Import**
    - Use `COPY` or import tool of your SQL client to upload data from CSVs into the corresponding tables.
 
-## Schema Overview
+## 🧩 Database Schema
 
-- **Customers**: Customer details including city and state.
-- **Geolocation**: Geolocation mapping by zip code.
-- **Orders**: Order statuses and timestamps.
-- **Order Items**: Details of items in each order.
-- **Order Payments**: Payment details per order.
-- **Order Reviews**: Customer reviews and scores.
-- **Products**: Product details including category and measurements.
-- **Sellers**: Seller details including location.
-- **Product Category Name Translation**: Translations of product categories from Portuguese to English.
+The project consists of 10 main tables:
+
+| Table Name                          | Description                                    |
+|-------------------------------------|------------------------------------------------|
+| `customers`                         | Customer IDs, unique IDs, city, state          |
+| `orders`                            | Order statuses, timestamps, customer IDs       |
+| `order_items`                       | Product, seller, price, freight per order item |
+| `order_payments`                    | Payment methods, installments, payment value   |
+| `order_reviews`                     | Customer ratings and review details            |
+| `products`                          | Product details, dimensions, category          |
+| `sellers`                           | Seller IDs, location, zip code                 |
+| `product_category_name_translation` | Product category translations (Portuguese → English) |
+| `geolocation`                       | Geolocation details by zip code                |
 
 ## SQL Queries Included
 
