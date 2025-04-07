@@ -302,3 +302,31 @@ LIMIT 10;
 |5d0a2980b292d049061542014e8960bf  |4809.44    |
 |eebb5dda148d3893cdaf5b5ca3040ccb  |4764.34    |
 |48e1ac109decbb87765a3eade6854098  |4681.78    |
+# Q11: Top 5 Products with the Most Reviews and Their Average Rating
+## Solution
+```SQL
+SELECT 
+    p.product_id,
+    p.product_category_name,
+    COUNT(r.review_id) AS total_reviews,
+    ROUND(AVG(r.review_score), 2) AS average_rating
+FROM 
+    order_reviews r
+JOIN 
+    order_items i ON r.order_id = i.order_id
+JOIN 
+    products p ON i.product_id = p.product_id
+GROUP BY 
+    p.product_id, p.product_category_name
+ORDER BY 
+    total_reviews DESC
+LIMIT 5;
+```
+## Output
+|product_id                        |product_category_name|total_reviews|average_rating|
+|----------------------------------|---------------------|-------------|--------------|
+|aca2eb7d00ea1a7b8ebd4e68314663af  |moveis_decoracao     |524          |4.02          |
+|422879e10f46682990de24d770e7f83d  |ferramentas_jardim   |484          |3.95          |
+|99a4788cb24856965c36a24e339b6058  |cama_mesa_banho      |480          |3.90          |
+|389d119b48cf3043d311335e499d9c6b  |ferramentas_jardim   |389          |4.11          |
+|368c6c730842d78016ad823897a372db  |ferramentas_jardim   |388          |3.92          |
