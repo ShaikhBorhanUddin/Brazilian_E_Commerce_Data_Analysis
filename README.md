@@ -82,7 +82,7 @@ The project consists of 10 main tables:
 - PostgreSQL
 - SQL
 - Kaggle Dataset
-- DBeaver / PgAdmin (optional for visual interface)
+- Tableau
 
 ## License
 
