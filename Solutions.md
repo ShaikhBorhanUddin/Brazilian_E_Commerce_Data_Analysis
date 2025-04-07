@@ -330,3 +330,33 @@ LIMIT 5;
 |99a4788cb24856965c36a24e339b6058  |cama_mesa_banho      |480          |3.90          |
 |389d119b48cf3043d311335e499d9c6b  |ferramentas_jardim   |389          |4.11          |
 |368c6c730842d78016ad823897a372db  |ferramentas_jardim   |388          |3.92          |
+# Q12: Identify Orders with the Lowest Ratings and Longest Delivery Time
+## Solution
+```SQL
+SELECT 
+    o.order_id,
+    r.review_score,
+    EXTRACT(DAY FROM o.order_delivered_customer_date - o.order_purchase_timestamp) AS delivery_days
+FROM 
+    orders o
+JOIN 
+    order_reviews r ON o.order_id = r.order_id
+WHERE 
+    r.review_score = 1
+ORDER BY 
+    delivery_days DESC
+LIMIT 10;
+```
+## Output
+|order_id                          |review_score|delivery_days|
+|----------------------------------|------------|-------------|
+|95e42e6aaf6264cd3e77c06b32dc3003  |1           |NULL         |
+|5869074071e0f56e9085dc3742c97b2a  |1           |NULL         |
+|1b9ecfe83cdc259250e1a8aca174f0ad  |1           |NULL         |
+|b68d69564a79dea4776afa33d1d2fcab  |1           |NULL         |
+|ee64d42b8cf066f35eac1cf57de1aa85  |1           |NULL         |
+|3b4ad687e7e5190db827e1ae5a8989dd  |1           |NULL         |
+|8e24261a7e58791d10cb1bf9da94df5c  |1           |NULL         |
+|d3c8851a6651eeff2f73b0e011ac45d0  |1           |NULL         |
+|36530871a5e80138db53bcfd8a104d90  |1           |NULL         |
+|38b7efdf33dd5561f4f5d4f6e07b0414  |1           |NULL         |
