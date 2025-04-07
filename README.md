@@ -26,7 +26,7 @@ The goal is to build a relational database and run analytical queries to extract
 3. **Data Import**
    - Use `COPY` or import tool of your SQL client to upload data from CSVs into the corresponding tables.
 
-## 🧩 Database Schema
+##  Database Schema
 
 The project consists of 10 main tables:
 
