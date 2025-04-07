@@ -160,3 +160,81 @@ FROM (
 |total_customers|repeat_customers|repeat_purchase_rate_percentage|
 |---------------|----------------|-------------------------------|
 |99441          |0               |0.00                           |
+# Q7: Display lowest 10 average review scores per seller
+## Solution
+```SQL
+SELECT 
+    oi.seller_id,
+    ROUND(AVG(orw.review_score), 2) AS average_review_score
+FROM order_items oi
+JOIN order_reviews orw ON oi.order_id = orw.order_id
+GROUP BY oi.seller_id
+ORDER BY average_review_score ASC
+LIMIT 10;
+```
+## Output
+|seller_id                         |average_review_score|
+|----------------------------------|--------------------|
+|cecd97bc34ed8330bd4cd15713eda670  |1.00                |
+|d1a5cc844736958c11b8efab9a2b4c87  |1.00                |
+|cf281cf8b7affbdfe751b29cc85580e1  |1.00                |
+|60ad151920c4f6f3ebbe8cfdf6166779  |1.00                |
+|c200c73f9d7e5a08ca439d6a0803da7c  |1.00                |
+|f9eda05b67bef472deaddbba84aca289  |1.00                |
+|9591fc341b1bfb7ef561e2968ec6e011  |1.00                |
+|34aefe746cd81b7f3b23253ea28bef39  |1.00                |
+|9c3a1c416c765687bc79a04113269929  |1.00                |
+|da2782c804606d2a5d8e1760dbb3e7ec  |1.00                |
+# Q8: What is the average delivery time and the percentage of delayed deliveries across different states?
+## Solution
+```SQL
+SELECT 
+    c.customer_state,
+    ROUND(AVG(EXTRACT(DAY FROM o.order_delivered_customer_date - o.order_purchase_timestamp)), 2) AS avg_delivery_days,
+    ROUND(100.0 * SUM(
+        CASE 
+            WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 1
+            ELSE 0
+        END
+    ) / COUNT(*), 2) AS delayed_delivery_percentage
+FROM 
+    orders o
+JOIN 
+    customers c ON o.customer_id = c.customer_id
+WHERE 
+    o.order_delivered_customer_date IS NOT NULL
+GROUP BY 
+    c.customer_state
+ORDER BY 
+    delayed_delivery_percentage DESC;
+```
+## Output
+|customer_state|avg_delivery_days|delayed_delivery_percentage|
+|--------------|-----------------|---------------------------|
+|AL            |24.04            |23.93                      |
+|MA            |21.12            |19.67                      |
+|PI            |18.99            |15.97                      |
+|CE            |20.82            |15.32                      |
+|SE            |21.03            |15.22                      |
+|BA            |18.87            |14.04                      |
+|RJ            |14.85            |13.47                      |
+|TO            |17.23            |12.77                      |
+|PA            |23.32            |12.37                      |
+|ES            |15.33            |12.23                      |
+|RR            |28.98            |12.20                      |
+|MS            |15.19            |11.55                      |
+|PB            |19.95            |11.03                      |
+|PE            |17.97            |10.80                      |
+|RN            |18.82            |10.76                      |
+|SC            |14.48            |9.75                       |
+|GO            |15.15            |8.18                       |
+|RS            |14.82            |7.15                       |
+|DF            |12.51            |7.07                       |
+|MT            |17.59            |6.77                       |
+|SP            |8.30             |5.89                       |
+|MG            |11.54            |5.62                       |
+|PR            |11.53            |5.00                       |
+|AP            |26.73            |4.48                       |
+|AM            |25.99            |4.14                       |
+|AC            |20.64            |3.75                       |
+|RO            |18.91            |2.88                       |
