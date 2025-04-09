@@ -64,6 +64,7 @@ The project consists of 9 main tables:
 11. **Top 5 products with most reviews and average ratings**
 12. **Orders with the lowest ratings and longest delivery time**
 
+For solutions (SQL codes), outputs and visualization, see 
 ## Insights Extracted
 
 - Seasonal trends in sales revenue
