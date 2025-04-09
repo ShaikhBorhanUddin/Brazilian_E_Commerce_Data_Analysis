@@ -360,3 +360,27 @@ LIMIT 10;
 |d3c8851a6651eeff2f73b0e011ac45d0  |1           |NULL         |
 |36530871a5e80138db53bcfd8a104d90  |1           |NULL         |
 |38b7efdf33dd5561f4f5d4f6e07b0414  |1           |NULL         |
+```SQL
+SELECT
+  CASE
+    WHEN review_score >= 0 AND review_score < 1 THEN '0-1 Stars'
+    WHEN review_score >= 1 AND review_score < 2 THEN '1-2 Stars'
+    WHEN review_score >= 2 AND review_score < 3 THEN '2-3 Stars'
+    WHEN review_score >= 3 AND review_score < 4 THEN '3-4 Stars'
+    WHEN review_score >= 4 AND review_score < 5 THEN '4-5 Stars'
+	WHEN review_score = 5 THEN '5 Stars'
+    ELSE 'Unknown'
+  END AS review_score_bin,
+  COUNT(*) AS review_count
+FROM order_reviews
+GROUP BY review_score_bin
+ORDER BY review_score_bin;
+```
+## Output
+|review_score_bin|review_count|
+|----------------|------------|
+|1-2 Stars       |11282       |
+|2-3 Stars       |3114        |
+|3-4 Stars       |8097        |
+|4-5 Stars       |19007       |
+|5 Stars         |56910       |
