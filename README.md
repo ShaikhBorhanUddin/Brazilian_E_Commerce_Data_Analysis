@@ -64,7 +64,7 @@ The project consists of 9 main tables:
 11. **Top 5 products with most reviews and average ratings**
 12. **Orders with the lowest ratings and longest delivery time**
 
-For solutions (SQL codes), outputs and visualization, see `Solutions
+For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visualizations.md`](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Solutions_and_Visualization.md)
 ## Insights Extracted
 
 - Seasonal trends in sales revenue
