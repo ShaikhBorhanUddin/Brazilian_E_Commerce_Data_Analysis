@@ -42,7 +42,7 @@ The project consists of 10 main tables:
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
 ## ER Diagram
-![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/erd.png?raw=true)
 
 ## SQL Queries Included
 
