@@ -384,3 +384,4 @@ ORDER BY review_score_bin;
 |3-4 Stars       |8097        |
 |4-5 Stars       |19007       |
 |5 Stars         |56910       |
+![Dashboard](https://github.com/username/repo-name/blob/main/images/dashboard.png?raw=true)
