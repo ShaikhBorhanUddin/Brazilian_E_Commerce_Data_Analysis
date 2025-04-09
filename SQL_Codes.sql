@@ -255,3 +255,18 @@ WHERE
 ORDER BY 
     delivery_days DESC
 LIMIT 10;
+------------------------------------
+SELECT
+  CASE
+    WHEN review_score >= 0 AND review_score < 1 THEN '0-1 Stars'
+    WHEN review_score >= 1 AND review_score < 2 THEN '1-2 Stars'
+    WHEN review_score >= 2 AND review_score < 3 THEN '2-3 Stars'
+    WHEN review_score >= 3 AND review_score < 4 THEN '3-4 Stars'
+    WHEN review_score >= 4 AND review_score < 5 THEN '4-5 Stars'
+	WHEN review_score = 5 THEN '5 Stars'
+    ELSE 'Unknown'
+  END AS review_score_bin,
+  COUNT(*) AS review_count
+FROM order_reviews
+GROUP BY review_score_bin
+ORDER BY review_score_bin;
