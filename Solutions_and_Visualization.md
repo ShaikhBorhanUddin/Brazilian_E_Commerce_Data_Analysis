@@ -143,9 +143,9 @@ ORDER BY total_value DESC;
 |voucher     |5775              |379436.87  |
 |debit_card  |1529              |217989.79  |
 |not_defined |3                 |0.00       |
-
+## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202.png?raw=true)
-![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202(1).png?raw=true)
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202%20(1).png?raw=true)
 # Q6: Show customer repeat purchase rate
 ## Solution
 ```SQL
