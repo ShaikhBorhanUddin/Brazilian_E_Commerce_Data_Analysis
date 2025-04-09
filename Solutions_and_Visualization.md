@@ -151,6 +151,7 @@ ORDER BY total_value DESC;
 |not_defined |3                 |0.00       |
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202.png?raw=true)
+###
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202%20(1).png?raw=true)
 # Q6: Show customer repeat purchase rate
 ## Solution
@@ -247,6 +248,10 @@ ORDER BY
 |AM            |25.99            |4.14                       |
 |AC            |20.64            |3.75                       |
 |RO            |18.91            |2.88                       |
+## Tableau Visualization
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%208a.png?raw=true)
+###
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%208b.png?raw=true)
 # Q9: Track monthly active sellers
 ## Solution
 ```SQL
