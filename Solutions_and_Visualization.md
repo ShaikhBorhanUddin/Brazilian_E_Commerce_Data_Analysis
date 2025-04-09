@@ -60,7 +60,7 @@ LIMIT 5;
 |furniture_decor              |8334       |
 |computers_accessories        |7827       |
 ## Tableau Visualization
-![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet101.png?raw=true)
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202205.png?raw=true)
 # Q3: What is the average delivery time by state?
 ## Solution
 ```SQL
