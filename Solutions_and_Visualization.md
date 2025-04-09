@@ -99,6 +99,8 @@ ORDER BY avg_delivery_days;
 |AM            |25.986206896551725  |
 |AP            |26.73134328358209   |
 |RR            |28.975609756097562  |
+## Tableau Visualization
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%203%20(1).png?raw=true)
 # Q4: Display top 10 sellers by revenue
 ## Solution
 ```SQL
