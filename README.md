@@ -28,7 +28,7 @@ The goal is to build a relational database and run analytical queries to extract
 
 ##  Database Schema
 
-The project consists of 10 main tables:
+The project consists of 9 main tables:
 
 | Table Name                          | Description                                    |
 |-------------------------------------|------------------------------------------------|
