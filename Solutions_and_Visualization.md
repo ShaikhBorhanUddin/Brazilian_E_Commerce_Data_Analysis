@@ -384,4 +384,5 @@ ORDER BY review_score_bin;
 |3-4 Stars       |8097        |
 |4-5 Stars       |19007       |
 |5 Stars         |56910       |
-![Dashboard](https://github.com/username/repo-name/blob/main/images/dashboard.png?raw=true)
+## Tableau Visualization
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%201%20(1).png?raw=true)
