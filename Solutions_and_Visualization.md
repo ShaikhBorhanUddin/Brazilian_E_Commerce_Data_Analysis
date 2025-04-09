@@ -349,9 +349,7 @@ LIMIT 5;
 |389d119b48cf3043d311335e499d9c6b  |ferramentas_jardim   |389          |4.11          |
 |368c6c730842d78016ad823897a372db  |ferramentas_jardim   |388          |3.92          |
 ## Tableau Visualization
-![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%201%20(1).png?raw=true)
-
-
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/1122.png?raw=true)
 # Q12: Identify Orders with the Lowest Ratings and Longest Delivery Time
 ## Solution
 ```SQL
