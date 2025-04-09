@@ -1,4 +1,18 @@
 # Brazilian E-Commerce Public Dataset (Olist) SQL Project
+<!-- Project Badges -->
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL%20%7C%20MySQL%20%7C%20SQLite-blue?logo=postgresql&logoColor=white)
+![Made with](https://img.shields.io/badge/Made%20with-SQL-blue?logo=database)
+![License](https://img.shields.io/github/license/ShaikhBorhanUddin/Inventory_Management_Project)
+![Repo Size](https://img.shields.io/github/repo-size/ShaikhBorhanUddin/Inventory_Management_Project)
+![Stars](https://img.shields.io/github/stars/ShaikhBorhanUddin/Inventory_Management_Project?style=social)
+![Forks](https://img.shields.io/github/forks/ShaikhBorhanUddin/Inventory_Management_Project?style=social)
+![Last Commit](https://img.shields.io/github/last-commit/ShaikhBorhanUddin/Inventory_Management_Project)
+![Issues](https://img.shields.io/github/issues/ShaikhBorhanUddin/Inventory_Management_Project)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-Data%20Visualization-E97627?logo=Tableau&logoColor=white)
+![Git](https://img.shields.io/badge/Version%20Control-Git-orange?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/Host-GitHub-black?logo=github)
+![Project Status](https://img.shields.io/badge/Project-Completed-brightgreen?style=flat-square)
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
 This project explores the Brazilian E-Commerce Public Dataset by Olist using PostgreSQL.  
 The goal is to build a relational database and run analytical queries to extract insights about sales, customers, sellers, and logistics.
