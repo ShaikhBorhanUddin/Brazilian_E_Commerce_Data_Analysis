@@ -1,5 +1,5 @@
 # Brazilian E-Commerce Public Dataset (Olist) SQL Project
-
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
 This project explores the Brazilian E-Commerce Public Dataset by Olist using PostgreSQL.  
 The goal is to build a relational database and run analytical queries to extract insights about sales, customers, sellers, and logistics.
 
