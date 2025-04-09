@@ -290,6 +290,8 @@ ORDER BY month;
 |2018-07-01 00:00:00|1261          |
 |2018-08-01 00:00:00|1278          |
 |2018-09-01 00:00:00|1             |
+## Tableau Visualization
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%209.png?raw=true)
 # Q10: Identify top customers who spent the most
 ## Solution
 ```SQL
@@ -316,6 +318,8 @@ LIMIT 10;
 |5d0a2980b292d049061542014e8960bf  |4809.44    |
 |eebb5dda148d3893cdaf5b5ca3040ccb  |4764.34    |
 |48e1ac109decbb87765a3eade6854098  |4681.78    |
+## Tableau Visualization
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%2010.png?raw=true)
 # Q11: Top 5 Products with the Most Reviews and Their Average Rating
 ## Solution
 ```SQL
