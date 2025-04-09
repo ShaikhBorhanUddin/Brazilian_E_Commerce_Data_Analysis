@@ -37,7 +37,7 @@ ORDER BY month;
 |2018-08-01 00:00:00|1003308.47   |
 |2018-09-01 00:00:00|166.46       |
 ## Tableau Visualization
-![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%203%20(1).png?raw=true)
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet101.png?raw=true)
 # Q2: Show top 5 most selling product categories
 ## Solution
 ```SQL
