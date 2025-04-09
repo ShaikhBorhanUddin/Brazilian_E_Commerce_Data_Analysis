@@ -41,6 +41,8 @@ The project consists of 10 main tables:
 | `sellers`                           | Seller IDs, location, zip code                 |
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
+## ER Diagram
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
 
 ## SQL Queries Included
 
