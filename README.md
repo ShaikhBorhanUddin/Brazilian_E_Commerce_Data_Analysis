@@ -52,7 +52,7 @@ The project consists of 9 main tables:
 | `geolocation`                       | Geolocation details by zip code                |
 
 ## SQL Queries
-The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in tableau are also provided.
+The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in Tableau are also provided.
 1. **Total sales revenue per month**
 2. **Top 5 most selling product categories**
 3. **Average delivery time by state**
