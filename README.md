@@ -14,8 +14,15 @@
 ![GitHub](https://img.shields.io/badge/Host-GitHub-black?logo=github)
 ![Project Status](https://img.shields.io/badge/Project-Completed-brightgreen?style=flat-square)
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
-This project explores the Brazilian E-Commerce Public Dataset by Olist using PostgreSQL.  
-The goal is to build a relational database and run analytical queries to extract insights about sales, customers, sellers, and logistics.
+This project leverages the Brazilian E-Commerce Public Dataset by Olist to perform business intelligence analysis using PostgreSQL. The objective is to design a structured relational database and execute data-driven queries that uncover strategic insights related to sales performance, customer behavior, seller dynamics, and logistics efficiency, ultimately supporting informed business decision-making and operational optimization.
+
+
+
+
+
+
+
+
 
 ## Dataset Source
 
