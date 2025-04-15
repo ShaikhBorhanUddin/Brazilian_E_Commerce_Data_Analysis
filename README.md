@@ -106,11 +106,23 @@ Some visualizations derived from SQL queries like average delivery time, days, a
 </div>
 
 ## How to Use
+1. Clone the Repository
 
-1. Clone the repository.
-2. Import the SQL file into your PostgreSQL environment.
-3. Load the dataset CSVs into the respective tables.
-4. Run the queries to explore insights!
+   Begin by cloning this repository to your local machine using:
+```bash
+git clone https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Data_Analysis.git
+```
+2. Set Up the PostgreSQL Database
+
+   Create a new PostgreSQL database and import the provided SQL schema to initialize the necessary tables.
+
+3. Load the Dataset
+
+   Populate the database by importing the corresponding CSV files into their respective tables. This can be done using PostgreSQL’s COPY command or your preferred database management tool.
+
+4. Execute Analytical Queries
+
+   Navigate to the sql_queries directory to run pre-written SQL scripts or craft your own to uncover valuable business insights from the data.
 
 ## Tools & Technologies
 
