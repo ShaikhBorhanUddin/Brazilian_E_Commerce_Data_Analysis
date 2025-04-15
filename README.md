@@ -86,7 +86,14 @@ For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visual
 
 ## Tableau Visualizations
 Some visualizations derived from SQL queries are included here.
-<div align="center"> <img src="Images/Sheet 3 (1).png" alt="Order Status Distribution" width="45%" /> <img src="Images/Sheet 9.png" alt="Sales by State" width="46%" /> <br><br> <img src="Images/Sheet 8a.png" alt="Delivery Time Analysis" width="45%" /> <img src="Images/Sheet 8b.png" alt="Payment Type Distribution" width="45%" /> </div>
+
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+  <img src="Images/Sheet 3 (1).png" alt="Order Status Distribution" width="45%" />
+  <img src="Images/Sheet 9.png" alt="Sales by State" width="45%" />
+  <img src="Images/Sheet 8a.png" alt="Delivery Time Analysis" width="45%" />
+  <img src="Images/Sheet 8b.png" alt="Payment Type Distribution" width="45%" />
+</div>
+
 ## How to Use
 
 1. Clone the repository.
