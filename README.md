@@ -16,24 +16,21 @@
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/olist.png?raw=true)
 This project leverages the Brazilian E-Commerce Public Dataset by Olist to perform business intelligence analysis using PostgreSQL. The objective is to design a structured relational database and execute data-driven queries that uncover strategic insights related to sales performance, customer behavior, seller dynamics, and logistics efficiency, ultimately supporting informed business decision-making and operational optimization.
 
-
-
-
-
-
-
-
-
 ## Dataset Source
 
 Kaggle: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
+This dataset was generously provided by Olist, the largest department store in Brazilian marketplaces. Olist connects small businesses from all over Brazil to channels without hassle and with a single contract. Those merchants are able to sell their products through the Olist Store and ship them directly to the customers using Olist logistics partners. See more on website: www.olist.com
+
+After a customer purchases the product from Olist Store a seller gets notified to fulfill that order. Once the customer receives the product, or the estimated delivery date is due, the customer gets a satisfaction survey by email where he can give a note for the purchase experience and write down some comments.
+
 ## Database Setup
 
 1. **Create Database**
-   - Database Name: `Olist_Project`
 
-2. **Tables Created**
+   Database Name: `Olist_Project`
+
+3. **Tables Created**
 
    `customers` `geolocation` `order_items` `order_payments` `order_reviews` `orders`
    `product_category_name_translation` `products` `sellers`
