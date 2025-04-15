@@ -51,7 +51,7 @@ The project consists of 9 main tables:
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
 
-## SQL Queries Included
+## SQL Queries
 The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in tableau are also provided.
 1. **Total sales revenue per month**
 2. **Top 5 most selling product categories**
@@ -70,13 +70,26 @@ For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visual
 
 These analytical questions play a crucial role in driving business intelligence by uncovering actionable insights across various operational and strategic areas. Tracking total sales revenue per month helps identify seasonal trends and forecast demand, while analyzing the top 5 most selling product categories supports inventory planning and marketing focus. Understanding the average delivery time by state, along with the percentage of delayed deliveries, enables businesses to optimize logistics and enhance customer satisfaction. Identifying the top 10 sellers by revenue reveals high-performing partners who can be prioritized for support or incentives. Insights into preferred payment methods help streamline the checkout experience and offer targeted promotions. Evaluating customer repeat purchase rates measures loyalty and long-term engagement, whereas average review scores per seller reflect service quality and reliability. Monthly active sellers indicate the platform’s vibrancy and can guide seller retention strategies. Recognizing top customers by total spend allows businesses to tailor loyalty programs and personalized services. Examining the most reviewed and highest-rated products helps in refining promotional efforts, while identifying orders with the lowest ratings and longest delivery times uncovers operational bottlenecks that need immediate attention. Altogether, these metrics form a comprehensive foundation for data-driven decision-making and long-term business growth.
 
-## Insights Extracted
-
-- Seasonal trends in sales revenue
-- Product category performance
-- Seller and customer behavior patterns
-- Delivery performance across regions
-- Customer satisfaction analysis via reviews
+## Sample Queries
+```sql
+SELECT 
+    DATE_TRUNC('month', order_purchase_timestamp) AS month,
+    SUM(oi.price + oi.freight_value) AS total_revenue
+FROM orders o
+JOIN order_items oi ON o.order_id = oi.order_id
+GROUP BY month
+ORDER BY month;
+```
+```sql
+SELECT 
+    c.customer_state,
+    AVG(DATE_PART('day', o.order_delivered_customer_date - o.order_purchase_timestamp)) AS avg_delivery_days
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+WHERE o.order_delivered_customer_date IS NOT NULL
+GROUP BY c.customer_state
+ORDER BY avg_delivery_days;
+```
 
 ## Tableau Visualizations
 Some visualizations derived from SQL queries like average delivery time, days, active sellers count and delays are included here.
