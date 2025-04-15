@@ -27,18 +27,13 @@ The goal is to build a relational database and run analytical queries to extract
    - Database Name: `Olist_Project`
 
 2. **Tables Created**
-   - `customers`
-   - `geolocation`
-   - `order_items`
-   - `order_payments`
-   - `order_reviews`
-   - `orders`
-   - `product_category_name_translation`
-   - `products`
-   - `sellers`
 
-3. **Data Import**
-   - Use `COPY` or import tool of your SQL client to upload data from CSVs into the corresponding tables.
+   `customers` `geolocation` `order_items` `order_payments` `order_reviews` `orders`
+   `product_category_name_translation` `products` `sellers`
+
+4. **Data Import**
+
+   Use `COPY` or import tool of your SQL client to upload data from CSVs into the corresponding tables.
 
 ##  Database Schema
 
@@ -55,13 +50,9 @@ The project consists of 9 main tables:
 | `sellers`                           | Seller IDs, location, zip code                 |
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
+
 ## SQL Queries Included
-
-### Data Checks
-- Quick `SELECT *` from each table to verify data import.
-
-### Analytical Questions and Solutions
-
+The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in tableau are also provided.
 1. **Total sales revenue per month**
 2. **Top 5 most selling product categories**
 3. **Average delivery time by state**
@@ -76,6 +67,9 @@ The project consists of 9 main tables:
 12. **Orders with the lowest ratings and longest delivery time**
 
 For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visualizations.md`](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Solutions_and_Visualization.md)
+
+These analytical questions play a crucial role in driving business intelligence by uncovering actionable insights across various operational and strategic areas. Tracking total sales revenue per month helps identify seasonal trends and forecast demand, while analyzing the top 5 most selling product categories supports inventory planning and marketing focus. Understanding the average delivery time by state, along with the percentage of delayed deliveries, enables businesses to optimize logistics and enhance customer satisfaction. Identifying the top 10 sellers by revenue reveals high-performing partners who can be prioritized for support or incentives. Insights into preferred payment methods help streamline the checkout experience and offer targeted promotions. Evaluating customer repeat purchase rates measures loyalty and long-term engagement, whereas average review scores per seller reflect service quality and reliability. Monthly active sellers indicate the platform’s vibrancy and can guide seller retention strategies. Recognizing top customers by total spend allows businesses to tailor loyalty programs and personalized services. Examining the most reviewed and highest-rated products helps in refining promotional efforts, while identifying orders with the lowest ratings and longest delivery times uncovers operational bottlenecks that need immediate attention. Altogether, these metrics form a comprehensive foundation for data-driven decision-making and long-term business growth.
+
 ## Insights Extracted
 
 - Seasonal trends in sales revenue
