@@ -19,7 +19,7 @@ The goal is to build a relational database and run analytical queries to extract
 
 ## Dataset Source
 
-- Kaggle: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+Kaggle: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ## Database Setup
 
