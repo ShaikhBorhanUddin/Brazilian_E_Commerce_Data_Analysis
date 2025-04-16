@@ -94,7 +94,17 @@ WHERE o.order_delivered_customer_date IS NOT NULL
 GROUP BY c.customer_state
 ORDER BY avg_delivery_days;
 ```
-
+```sql
+SELECT 
+    c.customer_unique_id,
+    ROUND(SUM(oi.price + oi.freight_value), 2) AS total_spent
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+GROUP BY c.customer_unique_id
+ORDER BY total_spent DESC
+LIMIT 10;
+```
 ## Tableau Visualizations
 Some visualizations derived from SQL queries like average delivery time, days, active sellers count and delays are included here.
 
