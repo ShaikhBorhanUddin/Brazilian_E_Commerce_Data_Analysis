@@ -142,7 +142,7 @@ This project is licensed for educational and learning purposes. It is free to us
 
 ### Author
 
-Shaikh Borhan Uddin 
+**Shaikh Borhan Uddin**
 
 Project Date: April 2025
 
