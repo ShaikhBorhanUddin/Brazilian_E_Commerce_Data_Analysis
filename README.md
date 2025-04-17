@@ -20,9 +20,9 @@ This project leverages the Brazilian E-Commerce Public Dataset by Olist to perfo
 
 Kaggle: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
-This dataset was generously provided by Olist, the largest department store in Brazilian marketplaces. Olist connects small businesses from all over Brazil to channels without hassle and with a single contract. Those merchants are able to sell their products through the Olist Store and ship them directly to the customers using Olist logistics partners. See more on website: www.olist.com
+This dataset is a valuable contribution from Olist, the leading department store in Brazilian marketplaces. Olist empowers small businesses throughout Brazil by providing easy access to a wide range of sales channels under one convenient contract. By selling products through the Olist Store, merchants can efficiently reach customers and seamlessly ship their orders with the help of Olist's trusted logistics partners. Discover more about what Olist offers at www.olist.com.
 
-After a customer purchases the product from Olist Store a seller gets notified to fulfill that order. Once the customer receives the product, or the estimated delivery date is due, the customer gets a satisfaction survey by email where he can give a note for the purchase experience and write down some comments.
+Upon purchasing a product from the Olist Store, sellers are promptly notified to fulfill the order, ensuring a swift and efficient process. Once the product is delivered or the estimated delivery date has passed, customers receive an email inviting them to complete a satisfaction survey. This valuable feedback allows them to rate their shopping experience and share their thoughts, helping Olist and its sellers to continually improve.
 
 ## Database Setup
 
@@ -67,6 +67,8 @@ For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visual
 These analytical questions play a crucial role in driving business intelligence by uncovering actionable insights across various operational and strategic areas. Tracking total sales revenue per month helps identify seasonal trends and forecast demand, while analyzing the top 5 most selling product categories supports inventory planning and marketing focus. Understanding the average delivery time by state, along with the percentage of delayed deliveries, enables businesses to optimize logistics and enhance customer satisfaction. Identifying the top 10 sellers by revenue reveals high-performing partners who can be prioritized for support or incentives. Insights into preferred payment methods help streamline the checkout experience and offer targeted promotions. Evaluating customer repeat purchase rates measures loyalty and long-term engagement, whereas average review scores per seller reflect service quality and reliability. Monthly active sellers indicate the platform’s vibrancy and can guide seller retention strategies. Recognizing top customers by total spend allows businesses to tailor loyalty programs and personalized services. Examining the most reviewed and highest-rated products helps in refining promotional efforts, while identifying orders with the lowest ratings and longest delivery times uncovers operational bottlenecks that need immediate attention. Altogether, these metrics form a comprehensive foundation for data-driven decision-making and long-term business growth.
 
 ## Sample Queries
+
+Some sql queries used in this project with explanations are included in this section.
 ```sql
 SELECT 
     DATE_TRUNC('month', order_purchase_timestamp) AS month,
@@ -76,6 +78,8 @@ JOIN order_items oi ON o.order_id = oi.order_id
 GROUP BY month
 ORDER BY month;
 ```
+**Explanation:**
+This query calculates monthly total revenue by summing product prices and freight values from customer orders. It uses DATE_TRUNC('month', order_purchase_timestamp) to extract the month from each order's timestamp and labels it as month. The SUM(oi.price + oi.freight_value) expression adds the product price and freight cost to compute the total revenue for each order item. The orders table (aliased as o) is joined with the order_items table (aliased as oi) using the order_id to combine order-level and item-level data. The results are grouped by month using GROUP BY month to aggregate the revenue for each month and then sorted chronologically with ORDER BY month.
 ```sql
 SELECT 
     c.customer_state,
@@ -86,6 +90,8 @@ WHERE o.order_delivered_customer_date IS NOT NULL
 GROUP BY c.customer_state
 ORDER BY avg_delivery_days;
 ```
+**Explanation:**
+This query calculates the average delivery time (in days) for each customer state. It selects customer_state from the customers table and computes the average number of days between the order purchase date and the delivery date using DATE_PART('day', o.order_delivered_customer_date - o.order_purchase_timestamp). Only orders with a non-null order_delivered_customer_date are considered, ensuring that only completed deliveries are included. The orders table (aliased as o) is joined with the customers table (aliased as c) on customer_id to associate each order with its customer’s state. Results are grouped by customer_state to calculate the average delivery days per state and sorted in ascending order by avg_delivery_days to show which states receive deliveries fastest.
 ```sql
 SELECT 
     c.customer_unique_id,
@@ -97,6 +103,8 @@ GROUP BY c.customer_unique_id
 ORDER BY total_spent DESC
 LIMIT 10;
 ```
+**Explanation:**
+This query retrieves the top 10 customers based on total spending, combining product prices and freight costs. It selects each customer's customer_unique_id and calculates the total amount spent using SUM(oi.price + oi.freight_value), rounded to two decimal places with ROUND(..., 2). The customers table is joined with orders using customer_id, and orders is further joined with order_items using order_id to access item-level prices and shipping costs. The results are grouped by customer_unique_id to get spending totals per customer, ordered in descending order of total_spent, and limited to the top 10 highest spenders.
 ## Tableau Visualizations
 Some visualizations derived from SQL queries like average delivery time, days, active sellers count and delays are included here.
 
