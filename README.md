@@ -55,6 +55,33 @@ The project consists of 9 main tables:
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
 
+```
+Brazilian_E_Commerce_Data_Analysis/
+│
+├── data/                        
+│   ├── raw/                    # Original dataset files from Kaggle
+│   └── processed/              # Cleaned and transformed data files
+│
+├── sql/                        
+│   └── queries.sql             # All PostgreSQL analytical queries
+│
+├── visualizations/            
+│   └── tableau_dashboards/     # Tableau packaged workbooks or screenshots
+│       ├── sales_analysis.png
+│       ├── customer_distribution.png
+│       └── avg_delivery_days.png
+│
+├── excel/                      
+│   └── data_cleaning.xlsx      # Excel sheets used for basic preprocessing
+│
+├── notebooks/                 
+│   └── exploration.ipynb       # Optional Jupyter Notebook for exploration
+│
+├── README.md                   
+├── LICENSE                     
+└── requirements.txt            # If applicable (used libraries or dependencies)
+```
+
 ## SQL Queries
 The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in Tableau are also provided.
 
