@@ -57,18 +57,10 @@ The project consists of 9 main tables:
 
 ## SQL Queries
 The following analytical questions are addressed in this project. Relevant visualizations (where applicable) in Tableau are also provided.
-1. **Total sales revenue per month**
-2. **Top 5 most selling product categories**
-3. **Average delivery time by state**
-4. **Top 10 sellers by revenue**
-5. **Most preferred payment methods**
-6. **Customer repeat purchase rate**
-7. **Average review score per seller**
-8. **Average delivery time and % of delayed deliveries by state**
-9. **Monthly active sellers**
-10. **Top customers by total spend**
-11. **Top 5 products with most reviews and average ratings**
-12. **Orders with the lowest ratings and longest delivery time**
+
+**`Total sales revenue per month`** **`Top 5 most selling product categories`** **`Average delivery time by state`** **`Top 10 sellers by revenue`** **`Most preferred payment methods`**
+**`Customer repeat purchase rate`** **`Average review score per seller`** **`Average delivery time and % of delayed deliveries by state`** **`Monthly active sellers`**
+**`Top customers by total spend`** **`Top 5 products with most reviews and average ratings`** **`Orders with the lowest ratings and longest delivery time`**
 
 For solutions (SQL codes), outputs and visualization, see [`Solutions_and_Visualizations.md`](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Solutions_and_Visualization.md)
 
