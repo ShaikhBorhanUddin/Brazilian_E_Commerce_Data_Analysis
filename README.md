@@ -106,7 +106,7 @@ LIMIT 10;
 **Explanation:**
 This query retrieves the top 10 customers based on total spending, combining product prices and freight costs. It selects each customer's customer_unique_id and calculates the total amount spent using SUM(oi.price + oi.freight_value), rounded to two decimal places with ROUND(..., 2). The customers table is joined with orders using customer_id, and orders is further joined with order_items using order_id to access item-level prices and shipping costs. The results are grouped by customer_unique_id to get spending totals per customer, ordered in descending order of total_spent, and limited to the top 10 highest spenders.
 ## Tableau Visualizations
-To derive deeper insights from the Brazilian E-Commerce Public Dataset, several Tableau visualizations were created from sql queries. These visualizations help identify business trends, customer behaviors, and operational efficiencies that are crucial for data-driven decision-making. Below is a breakdown of each visualization and its significance.
+To derive deeper insights from the Brazilian E-Commerce Public Dataset, several Tableau visualizations were created from sql queries. These visualizations help identify business trends, customer behaviors, and operational efficiencies that are crucial for data-driven decision-making. Below is a breakdown of some visualizations and their significance.
 
 <img src="Images/Sheet 3 (1).png" alt="Order Status Distribution" width="60%" />
 
@@ -136,7 +136,7 @@ git clone https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Data_Analysi
 In this project, PostgreSQL was used for querying and managing the dataset. It served as the primary database management system, enabling efficient data manipulation, aggregation, and analysis through SQL queries. PostgreSQL's robust support for relational data and complex queries was crucial for processing the large dataset. Excel was utilized for initial data exploration and cleaning. It provided an easy-to-use interface for quickly reviewing the dataset, handling missing values, and performing basic transformations. Excel's versatility also made it convenient for manually inspecting data and creating preliminary analyses before importing it into PostgreSQL. Tableau played a key role in visualizing the data. With its powerful features for creating interactive dashboards and reports, Tableau enabled the creation of insightful visualizations, such as sales trends, revenue distribution, and delivery times by region. These visualizations helped in uncovering meaningful patterns and making the data more accessible to stakeholders. Finally, the dataset used in the project was sourced from Kaggle. Kaggle provided a high-quality, publicly available dataset that served as the foundation for the analysis. It included a comprehensive set of records that helped in exploring various aspects of Brazilian e-commerce, such as order details, product information, and customer demographics.
 ## License
 
-This project is licensed for educational and learning purposes.
+This project is licensed for educational and learning purposes. It is free to use, modify, and distribute, provided that the original author(s) are credited.
 
 ---
 
