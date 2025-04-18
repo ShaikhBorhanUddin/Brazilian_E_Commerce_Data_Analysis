@@ -125,15 +125,15 @@ This query retrieves the top 10 customers based on total spending, combining pro
 ## Tableau Visualizations
 To derive deeper insights from the Brazilian E-Commerce Public Dataset, several Tableau visualizations were created from sql queries. These visualizations help identify business trends, customer behaviors, and operational efficiencies that are crucial for data-driven decision-making. Below is a breakdown of some visualizations and their significance.
 
-<img src="Images/Sheet 3 (1).png" alt="Order Status Distribution" width="60%" />
+<img src="Images/Sheet 3 (1).png" alt="Order Status Distribution" width="85%" />
 
 This bar chart above displays the average number of days it takes for orders to be delivered in each state. Efficient delivery is a key factor in customer satisfaction. States with significantly higher delivery times can signal challenges in logistics, infrastructure, or supplier distribution. This visualization is useful for identifying areas where delivery optimization or partnership with local carriers may be needed.
 
-<img src="Images/Sheet 9.png" alt="Sales by State" width="60%" />
+<img src="Images/Sheet 9.png" alt="Sales by State" width="85%" />
 
 This line chart tracks the number of unique sellers who made at least one sale in each month. It serves as an indicator of marketplace engagement from the seller side. A growing number of active sellers may suggest a healthy platform attracting more vendors, while a drop might hint at increased competition, seasonal inactivity, or dissatisfaction among sellers. This metric is useful for gauging the platform’s supply-side dynamics and ensuring a diverse and competitive catalog of products.
 
-<img src="Images/Sheet 8a.png" alt="Delivery Time Analysis" width="60%" />
+<img src="Images/Sheet 8a.png" alt="Delivery Time Analysis" width="85%" />
 
 This bar chart represents the average number of days it takes to deliver an order in each Brazilian state. The calculation is based on the difference between the order purchase timestamp and the delivery date. States with longer delivery times may indicate challenges in logistics, shipping infrastructure, or geographical factors. By identifying states with higher-than-average delivery times, businesses can focus on optimizing their supply chain and improving customer satisfaction in those regions. This visualization also helps assess the efficiency of the platform's overall delivery system.
 
