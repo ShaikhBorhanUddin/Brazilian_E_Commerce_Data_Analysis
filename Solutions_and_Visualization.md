@@ -126,6 +126,9 @@ This SQL query calculates the **average delivery time (in days)** for orders del
 |AM            |25.986206896551725  |
 |AP            |26.73134328358209   |
 |RR            |28.975609756097562  |
+
+The data reveals that the average delivery time varies significantly across Brazilian states, with São Paulo (SP) having the fastest average delivery at approximately 8.3 days, while Roraima (RR) experiences the longest at nearly 29 days. Southeastern and southern states like SP, PR, and MG generally have faster delivery times, likely due to better infrastructure and proximity to distribution centers. In contrast, northern and northeastern states such as RR, AP, and AM face longer delivery times, highlighting potential logistical challenges in these regions. This insight can guide Olist in improving delivery efficiency and customer satisfaction in underperforming areas.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%203%20(1).png?raw=true)
 # Q4: Display top 10 sellers by revenue
