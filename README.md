@@ -55,6 +55,7 @@ The project consists of 9 main tables:
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
 
+![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Data_Analysis/blob/main/Images/erd_mod.png?raw=true)
 ## Folder Structure
 ```
 Brazilian_E_Commerce_Data_Analysis/
