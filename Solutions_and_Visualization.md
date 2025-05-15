@@ -46,7 +46,11 @@ The SQL query output shows a month-by-month breakdown of total revenue generated
 
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet101.png?raw=true)
+
 # Q2: Show top 5 most selling product categories
+
+This question is significant in the context of business intelligence for the Olist project because it helps identify which product categories contribute the most to sales volume, providing valuable insight into customer demand and market trends. By knowing the top-selling categories, Olist can optimize inventory management, prioritize partnerships with suppliers in high-performing segments, and tailor marketing efforts to promote popular or complementary products. This data-driven approach enhances strategic planning, supports revenue growth, and ensures the platform aligns its offerings with consumer preferences.
+
 ## Solution
 ```SQL
 SELECT 
@@ -59,6 +63,8 @@ GROUP BY pct.product_category_name_english
 ORDER BY total_sales DESC
 LIMIT 5;
 ```
+This SQL query retrieves the top 5 best-selling product categories in terms of total items sold. It joins the `order_items`, `products`, and `product_category_name_translation` tables to match each sold product with its translated English category name. By counting the number of product IDs in each category (`COUNT(oi.product_id)`), the query determines the sales volume for each category. It then groups the data by category name, orders the results in descending order of total sales, and limits the output to the top 5. This helps identify the most popular product categories, which is crucial for inventory and marketing strategies.
+
 ## Output
 |product_category_name_english|total_sales|
 |-----------------------------|-----------|
@@ -67,9 +73,16 @@ LIMIT 5;
 |sports_leisure               |8641       |
 |furniture_decor              |8334       |
 |computers_accessories        |7827       |
+
+The query results show that the top-selling product category is **bed_bath_table** with **11,115** sales, followed by **health_beauty** (**9,670**), **sports_leisure** (**8,641**), **furniture_decor** (**8,334**), and **computers_accessories** (**7,827**). These categories represent the highest volume of products sold, indicating strong consumer demand and offering valuable insights for Olist to optimize stock levels, marketing focus, and supplier relationships in these areas.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202205.png?raw=true)
+
 # Q3: What is the average delivery time by state?
+
+This question helps uncover regional differences in delivery performance by calculating the average delivery time (in days) for orders delivered to each Brazilian state. For a company like Olist, understanding how delivery times vary geographically is critical for evaluating logistics efficiency, identifying bottlenecks in the supply chain, and improving customer satisfaction. It also enables better planning with delivery partners and helps set realistic expectations for customers based on their location.
+
 ## Solution
 ```SQL
 SELECT 
@@ -81,6 +94,8 @@ WHERE o.order_delivered_customer_date IS NOT NULL
 GROUP BY c.customer_state
 ORDER BY avg_delivery_days;
 ```
+This SQL query calculates the **average delivery time (in days)** for orders delivered to each Brazilian state by subtracting the purchase timestamp from the actual delivery date. It joins the `orders` table with the `customers` table on the `customer_id` field to associate each order with a customer’s state. It filters out any orders that do not have a recorded delivery date (`order_delivered_customer_date IS NOT NULL`) to ensure accuracy in the delivery time calculation. The result is grouped by each state (`customer_state`) and sorted in ascending order of average delivery time, helping Olist assess which states have faster or slower deliveries and optimize logistics accordingly.
+
 ## Output
 |customer_state|avg_delivery_days   |
 |--------------|--------------------|
