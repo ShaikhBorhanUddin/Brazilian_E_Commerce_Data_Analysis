@@ -131,7 +131,11 @@ The data reveals that the average delivery time varies significantly across Braz
 
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%203%20(1).png?raw=true)
+
 # Q4: Display top 10 sellers by revenue
+
+The question "Q4: Display top 10 sellers by revenue" aims to identify which sellers contribute most to the overall sales performance on the Olist platform. This insight is crucial in the context of business intelligence as it helps Olist recognize high-performing vendors who drive substantial revenue. Understanding top sellers allows the business to maintain strong relationships with them, design incentive programs, and analyze their practices for replicable success across other vendors. It also helps in identifying potential risks if too much revenue depends on a few sellers and informs inventory, partnership, and strategic planning decisions.
+
 ## Solution
 ```SQL
 SELECT 
@@ -143,6 +147,8 @@ GROUP BY s.seller_id
 ORDER BY total_revenue DESC
 LIMIT 10;
 ```
+This SQL query retrieves the top 10 sellers based on total revenue generated from their sales on the platform. It works by selecting the `seller_id` from the `order_items` table and calculating the `total_revenue` for each seller by summing both the product `price` and the `freight_value` (shipping fee). The `GROUP BY oi.seller_id` clause ensures that the revenue is aggregated for each individual seller. The results are then sorted in descending order of revenue using `ORDER BY total_revenue DESC`, ensuring that the sellers generating the most revenue appear first. Finally, the `LIMIT 10` clause restricts the output to only the top 10 highest-earning sellers.
+
 ## Output
 |seller_id                         |total_revenue|
 |----------------------------------|-------------|
@@ -156,6 +162,9 @@ LIMIT 10;
 |1025f0e2d44d7041d6cf58b6550e0bfa  |172860.69    |
 |7a67c85e85bb2ce8582c35f2203ad736  |162648.38    |
 |955fee9216a65b617aa5c0531780ce60  |160602.68    |
+
+The summary of the query output shows the top 10 sellers on the platform ranked by total revenue earned. The highest-earning seller generated approximately $249,641, while the tenth highest earned around $160,603. These sellers stand out for their strong sales performance, combining product prices and shipping fees to contribute significantly to the platform’s total revenue.
+
 # Q5: Display most preferred payment methods
 ## Solution
 ```SQL
