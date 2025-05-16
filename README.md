@@ -24,23 +24,6 @@ This dataset is a valuable contribution from Olist, the leading department store
 
 Upon purchasing a product from the Olist Store, sellers are promptly notified to fulfill the order, ensuring a swift and efficient process. Once the product is delivered or the estimated delivery date has passed, customers receive an email inviting them to complete a satisfaction survey. This valuable feedback allows them to rate their shopping experience and share their thoughts, helping Olist and its sellers to continually improve.
 
-## Database Setup
-
-1. **Create Database**
-
-   Database Name: `Olist_Project`
-
-3. **Tables Created**
-
-   `customers` `geolocation` `order_items` `order_payments` `order_reviews` `orders`
-   `product_category_name_translation` `products` `sellers`
-
-4. **Data Import**
-
-   Use `COPY` or import tool of your SQL client to upload data from CSVs into the corresponding tables.
-
-##  Database Schema
-
 The project consists of 9 main tables:
 
 | Table Name                          | Description                                    |
@@ -54,6 +37,8 @@ The project consists of 9 main tables:
 | `sellers`                           | Seller IDs, location, zip code                 |
 | `product_category_name_translation` | Product category translations (Portuguese → English) |
 | `geolocation`                       | Geolocation details by zip code                |
+
+The ER diagram of this database is as follows:
 
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Data_Analysis/blob/main/Images/erd_mod.png?raw=true)
 ## Folder Structure
