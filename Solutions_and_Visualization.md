@@ -196,7 +196,11 @@ The SQL output shows that credit cards are the most preferred and widely used pa
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202.png?raw=true)
 ###
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202%20(1).png?raw=true)
+
 # Q6: Show customer repeat purchase rate
+
+In the context of the Olist project, analyzing the **customer repeat purchase rate** is crucial for understanding customer loyalty and retention. This metric helps the business identify how many customers return to make additional purchases after their first transaction. A high repeat purchase rate indicates customer satisfaction, effective marketing, and strong brand trust, while a low rate may suggest issues with product quality, customer experience, or delivery logistics. For a marketplace like Olist, where long-term profitability heavily depends on recurring customers rather than one-time buyers, this insight can directly influence strategies related to customer relationship management, personalized promotions, and lifecycle marketing.
+
 ## Solution
 ```SQL
 SELECT
@@ -209,11 +213,19 @@ FROM (
     GROUP BY customer_id
 ) subquery;
 ```
+This SQL query calculates the **repeat purchase rate** of customers in the Olist dataset. It starts with a subquery that groups orders by each `customer_id` and counts how many orders each customer has made, producing a table of `customer_id` with their corresponding `customer_order_count`. The outer query then counts the total number of unique customers (`total_customers`) and separately counts how many of those customers have placed more than one order (`repeat_customers`). Finally, it calculates the `repeat purchase rate percentage` by dividing the number of repeat customers by the total number of customers, multiplying by 100, and rounding the result to two decimal places. This metric reflects how many customers return for another purchase, which is a key indicator of customer satisfaction and loyalty.
+
 ## Output
 |total_customers|repeat_customers|repeat_purchase_rate_percentage|
 |---------------|----------------|-------------------------------|
 |99441          |0               |0.00                           |
+
+The chart indicates that out of **99,441 total customers**, **none (0 customers)** have made more than one purchase, resulting in a **0.00% repeat purchase rate**. This suggests that **all customers in the dataset made only a single order**. From a business intelligence perspective for the Olist project, this is a critical insight, as it highlights a lack of customer retention. It may imply that customers are not finding enough value to return, or that Olist's marketing and loyalty strategies are not effectively encouraging repeat purchases. Addressing this issue could involve improving customer experience, post-purchase engagement, or incentives for return shopping.
+
 # Q7: Display lowest 10 average review scores per seller
+
+In the context of the Olist project, **Question 7 aims to identify the bottom 10 sellers based on average customer review scores**, which can reveal underperforming sellers that may be affecting overall customer satisfaction and brand reputation. By spotlighting these sellers, Olist can take corrective actions—such as seller training, stricter onboarding standards, or even reconsidering seller partnerships—to improve quality assurance. From a business intelligence standpoint, monitoring seller performance via customer feedback is essential to maintaining a high-quality marketplace experience and reducing churn due to negative user experiences.
+
 ## Solution
 ```SQL
 SELECT 
@@ -225,6 +237,8 @@ GROUP BY oi.seller_id
 ORDER BY average_review_score ASC
 LIMIT 10;
 ```
+This SQL query retrieves the bottom 10 sellers based on their average customer review scores. It joins the `order_items` table (`oi`) with the `order_reviews` table (`orw`) using the `order_id` to connect items sold with their respective customer reviews. For each `seller_id`, it calculates the average `review_score` and rounds the result to two decimal places using the `ROUND()` function. The query groups the data by seller and then sorts the sellers in ascending order of their average review scores—bringing the lowest-rated sellers to the top. Finally, the `LIMIT 10` clause restricts the output to only the 10 sellers with the lowest average scores, making it easy to identify potentially problematic vendors.
+
 ## Output
 |seller_id                         |average_review_score|
 |----------------------------------|--------------------|
@@ -238,7 +252,13 @@ LIMIT 10;
 |34aefe746cd81b7f3b23253ea28bef39  |1.00                |
 |9c3a1c416c765687bc79a04113269929  |1.00                |
 |da2782c804606d2a5d8e1760dbb3e7ec  |1.00                |
+
+The query results show that the 10 lowest-rated sellers on the platform all received an average review score of 1.00, which is the minimum possible. This consistently poor feedback suggests significant issues with these sellers, such as product quality, service, or delivery problems. Identifying these sellers is crucial for Olist to take corrective actions, such as investigating customer complaints, offering support to improve service quality, or reconsidering their presence on the platform to maintain overall customer satisfaction.
+
 # Q8: What is the average delivery time and the percentage of delayed deliveries across different states?
+
+This question is significant for the Olist project because it helps assess the efficiency and reliability of order fulfillment across different geographic regions. By analyzing the **average delivery time** and the **percentage of delayed deliveries** by state, Olist can identify logistical bottlenecks, underperforming courier partners, or regional challenges that may be affecting customer satisfaction. These insights allow the business to optimize shipping strategies, allocate resources more effectively, improve delivery SLAs, and enhance the overall customer experience in regions where delays are frequent or delivery times are too long.
+
 ## Solution
 ```SQL
 SELECT 
@@ -261,6 +281,8 @@ GROUP BY
 ORDER BY 
     delayed_delivery_percentage DESC;
 ```
+This SQL query analyzes delivery performance across different customer states by calculating two key metrics: the average delivery time and the percentage of delayed deliveries. It joins the `orders` table with the `customers` table using the `customer_id` to group the data by `customer_state`. The first metric, `avg_delivery_days`, is computed by subtracting the purchase timestamp from the actual delivery date, extracting the day difference, and calculating the average per state. The second metric, `delayed_delivery_percentage`, calculates the proportion of orders where the actual delivery date exceeded the estimated delivery date. This is done by summing up cases where a delay occurred and dividing it by the total number of orders per state, converting it to a percentage. The result is ordered by delay percentage in descending order, helping identify states with the worst delivery performance.
+
 ## Output
 |customer_state|avg_delivery_days|delayed_delivery_percentage|
 |--------------|-----------------|---------------------------|
@@ -291,11 +313,17 @@ ORDER BY
 |AM            |25.99            |4.14                       |
 |AC            |20.64            |3.75                       |
 |RO            |18.91            |2.88                       |
+
+The data reveals notable disparities in delivery efficiency across Brazilian states. Alagoas (AL) had the highest average delivery time at 24.04 days and the highest delayed delivery rate at 23.93%, indicating significant logistical challenges. Conversely, states like São Paulo (SP) and Paraná (PR) showed much better performance, with SP having the lowest average delivery time of 8.3 days and a relatively low delay rate of 5.89%. Interestingly, some remote states such as Amapá (AP) and Amazonas (AM) had high delivery times (over 25 days) but low delay rates, suggesting that while deliveries take longer due to distance, they generally meet expectations. This analysis helps Olist identify regions where delivery logistics may require improvement and where customer expectations are being met more reliably.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%208a.png?raw=true)
 ###
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%208b.png?raw=true)
 # Q9: Track monthly active sellers
+
+Tracking monthly active sellers is significant for the Olist project as it provides critical insights into seller engagement and marketplace activity over time. By monitoring how many unique sellers are participating each month, Olist can assess platform growth, seller retention, and seasonal trends. It also helps identify any drops or spikes in seller activity that may signal operational issues, market fluctuations, or the effectiveness of marketing and onboarding strategies. Ultimately, this metric supports data-driven decision-making to optimize seller management, improve supply availability, and enhance overall marketplace performance.
+
 ## Solution
 ```SQL
 SELECT 
@@ -306,6 +334,8 @@ JOIN order_items oi ON o.order_id = oi.order_id
 GROUP BY month
 ORDER BY month;
 ```
+This SQL query calculates the number of **active sellers per month** in the Olist marketplace. It begins by truncating the `order_purchase_timestamp` to the month level using `DATE_TRUNC('month', ...)`, allowing the grouping of data by month. Then, it joins the orders table with the `order_items` table on `order_id`, which links each order to its corresponding seller(s). For each month, it counts the **distinct** `seller_id` values, meaning it only counts each seller once per month, regardless of how many sales they made. The `GROUP BY month` clause organizes the results monthly, and `ORDER BY month` ensures the output is chronologically sorted. This query effectively tracks how many unique sellers were active in each month.
+
 ## Output
 |month              |active_sellers|
 |-------------------|--------------|
@@ -333,9 +363,16 @@ ORDER BY month;
 |2018-07-01 00:00:00|1261          |
 |2018-08-01 00:00:00|1278          |
 |2018-09-01 00:00:00|1             |
+
+The data shows the monthly trend of **active sellers** on the Olist platform from September 2016 to September 2018. Initially, seller activity was minimal, with only **3 active sellers in Sep 2016**. Over time, the number of active sellers steadily increased, peaking at **1,278 in August 2018**, indicating strong platform growth and seller engagement. Notably, there are outliers in **December 2016** and **September 2018**, showing **only 1 active seller**, likely due to data entry gaps or anomalies. Overall, the platform experienced consistent seller growth over the observed period.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%209.png?raw=true)
+
 # Q10: Identify top customers who spent the most
+
+Identifying the **top-spending customers** is vital for **customer segmentation and relationship management**. These high-value customers can be targeted with **personalized marketing**, **loyalty programs**, or **exclusive deals** to boost retention. Additionally, understanding their buying behavior helps Olist optimize product offerings, delivery service, and enhance overall customer satisfaction—ultimately driving **higher customer lifetime value** and **revenue growth**.
+
 ## Solution
 ```SQL
 SELECT 
@@ -348,6 +385,8 @@ GROUP BY c.customer_unique_id
 ORDER BY total_spent DESC
 LIMIT 10;
 ```
+This SQL query identifies the **top 10 highest-spending customers** by calculating the total amount each customer spent, including product prices and freight costs. It joins the `customers`, `orders`, and `order_items` tables to track purchases, then groups by `customer_unique_id` (to account for customers with multiple accounts), sums up the total spent, and rounds it to 2 decimal places. Finally, it sorts customers in descending order of total spending and limits the result to the top 10. This insight is valuable for recognizing loyal or high-value customers, which is essential for targeted marketing and retention strategies.
+
 ## Output
 |customer_unique_id                |total_spent|
 |----------------------------------|-----------|
@@ -361,9 +400,16 @@ LIMIT 10;
 |5d0a2980b292d049061542014e8960bf  |4809.44    |
 |eebb5dda148d3893cdaf5b5ca3040ccb  |4764.34    |
 |48e1ac109decbb87765a3eade6854098  |4681.78    |
+
+The top 10 highest-spending customers on the Olist platform (based on total purchase + freight value) spent between **4,681.78 BRL** and **13,664.08 BRL**. The highest spender (`0a0a92112bd4c708ca5fde585afaa872`) spent **13,664.08 BRL**. These customers represent the platform’s most valuable buyers and are crucial for revenue generation. Understanding and engaging this segment can help in shaping personalized loyalty strategies and targeted marketing campaigns to drive repeat purchases and long-term retention.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%2010.png?raw=true)
+
 # Q11: Top 5 Products with the Most Reviews and Their Average Rating
+
+Identifying the top 5 most-reviewed products with their average ratings helps Olist understand which items are most popular and frequently purchased, providing insights into customer preferences, potential bestsellers, and product performance—valuable for marketing, inventory planning, and enhancing customer satisfaction.
+
 ## Solution
 ```SQL
 SELECT 
@@ -383,6 +429,8 @@ ORDER BY
     total_reviews DESC
 LIMIT 5;
 ```
+This SQL query identifies the top 5 most-reviewed products and their average customer ratings. It starts from the `order_reviews` table, joins it with `order_items` using the `order_id`, and then connects to the `products` table using the `product_id` to associate each review with its corresponding product. For each product, it calculates the total number of reviews (`COUNT(r.review_id)`) and the average review score (`AVG(r.review_score)`), rounded to two decimal places. The results are grouped by both `product_id` and `product_category_name` to ensure distinct product-level aggregation. Finally, it orders the products by the number of reviews in descending order and limits the output to the top five, revealing the most discussed products along with how well they are rated by customers.
+
 ## Output
 |product_id                        |product_category_name|total_reviews|average_rating|
 |----------------------------------|---------------------|-------------|--------------|
@@ -391,9 +439,16 @@ LIMIT 5;
 |99a4788cb24856965c36a24e339b6058  |cama_mesa_banho      |480          |3.90          |
 |389d119b48cf3043d311335e499d9c6b  |ferramentas_jardim   |389          |4.11          |
 |368c6c730842d78016ad823897a372db  |ferramentas_jardim   |388          |3.92          |
+
+The analysis reveals the top 5 most-reviewed products on the Olist platform, highlighting their popularity and customer satisfaction levels. The most reviewed product, from the **moveis_decoracao** (furniture and decor) category, received **524 reviews** with an average rating of **4.02**. Products in the **ferramentas_jardim** (garden tools) category dominate the list with three entries, having reviews ranging from **388 to 484** and average ratings between **3.92 and 4.11**. One product from the **cama_mesa_banho** (bed, bath, and table) category also appears, with **480 reviews** and a **3.90 average rating**. This data suggests that these product types not only have high customer engagement but also maintain relatively favorable customer satisfaction.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/1122.png?raw=true)
+
 # Q12: Identify Orders with the Lowest Ratings and Longest Delivery Time
+
+This analysis helps Olist identify problematic orders by highlighting those with **lowest customer ratings** and **longest delivery times**, offering critical insights into **operational inefficiencies, logistics issues, and poor customer experiences**, which can then be targeted for service improvement and customer retention strategies.
+
 ## Solution
 ```SQL
 SELECT 
@@ -410,6 +465,8 @@ ORDER BY
     delivery_days DESC
 LIMIT 10;
 ```
+This SQL query identifies the top 10 orders that received the **lowest review score (1-star)** and also experienced the **longest delivery times**. It joins the `orders` and `order_reviews` tables based on `order_id`, filters only those orders with a review score of 1, calculates the number of days between purchase and delivery (`delivery_days`), and sorts the result in descending order of delivery duration. The output helps pinpoint the worst customer experiences, which are likely influenced by late deliveries, offering Olist actionable insights for improving logistics and customer satisfaction.
+
 ## Output
 |order_id                          |review_score|delivery_days|
 |----------------------------------|------------|-------------|
@@ -423,6 +480,9 @@ LIMIT 10;
 |d3c8851a6651eeff2f73b0e011ac45d0  |1           |NULL         |
 |36530871a5e80138db53bcfd8a104d90  |1           |NULL         |
 |38b7efdf33dd5561f4f5d4f6e07b0414  |1           |NULL         |
+
+The output shows the 10 orders with the **lowest possible review score (1 star)** and their corresponding **delivery days**, but in all cases, the `delivery_days` value is `NULL`. This indicates that for these specific orders, the delivery date (`order_delivered_customer_date`) was not recorded in the database, possibly due to cancellations, lost shipments, or data entry issues. The combination of low ratings and missing delivery data suggests severe fulfillment problems, highlighting critical areas for operational improvement in Olist's delivery and tracking systems.
+
 ```SQL
 SELECT
   CASE
@@ -439,6 +499,8 @@ FROM order_reviews
 GROUP BY review_score_bin
 ORDER BY review_score_bin;
 ```
+This SQL query groups all review scores from the `order_reviews` table into defined rating bins (e.g., '0-1 Stars', '1-2 Stars', ..., '5 Stars'), counts how many reviews fall into each bin using `COUNT(*)`, and then returns the results sorted by the review score bin. It uses a `CASE` statement to categorize the `review_score` values into ranges, enabling clearer analysis of how reviews are distributed across different star ratings.
+
 ## Output
 |review_score_bin|review_count|
 |----------------|------------|
@@ -447,5 +509,8 @@ ORDER BY review_score_bin;
 |3-4 Stars       |8097        |
 |4-5 Stars       |19007       |
 |5 Stars         |56910       |
+
+The chart displays the distribution of customer review scores categorized into rating bins. The majority of reviews fall under the "5 Stars" category with 56,910 reviews, indicating a strong prevalence of highly satisfied customers. This is followed by "4-5 Stars" with 19,007 reviews and "3-4 Stars" with 8,097, reflecting a generally positive sentiment. On the lower end, "1-2 Stars" account for 11,282 reviews, suggesting a notable number of dissatisfied customers, while "2-3 Stars" and "3-4 Stars" have fewer reviews comparatively. Overall, the data shows that most customers are satisfied, although there's a significant volume of negative feedback that should be investigated.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%201%20(1).png?raw=true)
