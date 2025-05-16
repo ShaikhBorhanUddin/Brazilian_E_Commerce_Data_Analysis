@@ -134,7 +134,7 @@ The data reveals that the average delivery time varies significantly across Braz
 
 # Q4: Display top 10 sellers by revenue
 
-The question "Q4: Display top 10 sellers by revenue" aims to identify which sellers contribute most to the overall sales performance on the Olist platform. This insight is crucial in the context of business intelligence as it helps Olist recognize high-performing vendors who drive substantial revenue. Understanding top sellers allows the business to maintain strong relationships with them, design incentive programs, and analyze their practices for replicable success across other vendors. It also helps in identifying potential risks if too much revenue depends on a few sellers and informs inventory, partnership, and strategic planning decisions.
+The question aims to identify which sellers contribute most to the overall sales performance on the Olist platform. This insight is crucial in the context of business intelligence as it helps Olist recognize high-performing vendors who drive substantial revenue. Understanding top sellers allows the business to maintain strong relationships with them, design incentive programs, and analyze their practices for replicable success across other vendors. It also helps in identifying potential risks if too much revenue depends on a few sellers and informs inventory, partnership, and strategic planning decisions.
 
 ## Solution
 ```SQL
@@ -166,6 +166,9 @@ This SQL query retrieves the top 10 sellers based on total revenue generated fro
 The summary of the query output shows the top 10 sellers on the platform ranked by total revenue earned. The highest-earning seller generated approximately $249,641, while the tenth highest earned around $160,603. These sellers stand out for their strong sales performance, combining product prices and shipping fees to contribute significantly to the platform’s total revenue.
 
 # Q5: Display most preferred payment methods
+
+In the context of business intelligence for the Olist project, identifying the most preferred payment methods is crucial for understanding customer purchasing behavior and optimizing the payment experience. This insight helps the business determine which payment options are most popular, ensuring those methods are prioritized for customer convenience. It also informs strategic decisions related to partnerships with payment providers, identifies any barriers in the checkout process, and supports the development of targeted marketing campaigns or promotions tied to specific payment types. Ultimately, knowing the preferred payment methods enhances customer satisfaction and can lead to increased conversion rates and revenue.
+
 ## Solution
 ```SQL
 SELECT 
@@ -176,6 +179,8 @@ FROM order_payments
 GROUP BY payment_type
 ORDER BY total_value DESC;
 ```
+This SQL query analyzes customer payment behavior by aggregating transaction data from the `order_payments` table. It selects the type of payment (`payment_type`), counts how many transactions were made using each type (`total_transactions`), and calculates the total monetary value of those payments (`total_value`). The data is grouped by `payment_type` to aggregate values for each unique method (e.g., credit card, boleto). Finally, the results are ordered in descending order of `total_value`, showing which payment methods contributed the most revenue. This helps identify the most economically significant payment options used on the Olist platform.
+
 ## Output
 |payment_type|total_transactions|total_value|
 |------------|------------------|-----------|
@@ -184,6 +189,9 @@ ORDER BY total_value DESC;
 |voucher     |5775              |379436.87  |
 |debit_card  |1529              |217989.79  |
 |not_defined |3                 |0.00       |
+
+The SQL output shows that credit cards are the most preferred and widely used payment method on the Olist platform, accounting for 76,795 transactions and generating over 12.5 million in total payment value. Boleto follows with nearly 20,000 transactions and approximately 2.87 million in value. Vouchers and debit cards were used far less frequently, contributing relatively minor amounts to the total revenue. The "not_defined" category appeared only three times and recorded no monetary value, indicating either data entry issues or unclassified transactions.
+
 ## Tableau Visualization
 ![Dashboard](https://github.com/ShaikhBorhanUddin/Brazilian_E_Commerce_Project/blob/main/Images/Sheet%202.png?raw=true)
 ###
