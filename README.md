@@ -1,4 +1,4 @@
-# Brazilian E-Commerce Public Dataset (Olist) SQL Project
+# Brazilian E-Commerce (Olist) Data Analysis
 <!-- Project Badges -->
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL%20%7C%20MySQL%20%7C%20SQLite-blue?logo=postgresql&logoColor=white)
 ![Made with](https://img.shields.io/badge/Made%20with-SQL-blue?logo=database)
